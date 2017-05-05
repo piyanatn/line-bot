@@ -28,7 +28,7 @@ if (!is_null($events['events'])) {
 			$data = [
 				'replyToken' => $replyToken,
 				//'messages' => [$messages],
-        'messages' => ['Farm เก่งว่ะ']
+        'messages' => ['farm'],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
