@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			//$text = 'คำเตือน : '.$obj['opd_allergy'][0]['agent'];
 
 
-			if (strlen($text)=13){
+			if (strlen($text)==13){
 			//READ DRUG ALLEGRY
 			$line_url = 'http://110.77.146.4:3000/api/drugallergy/'.$text;
 			$chl = curl_init($line_url);
