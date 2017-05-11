@@ -1,7 +1,7 @@
 <?php
 
 //READ DRUG ALLEGRY
-$line_url = 'http://localhost:3000/api/drugallergy/3670500981816';
+$line_url = 'http://110.77.146.4/rest/index.php?cid=3670500981816';
 $chl = curl_init($line_url);
 curl_setopt($chl, CURLOPT_TIMEOUT, 5);
 curl_setopt($chl, CURLOPT_CONNECTTIMEOUT, 5);
