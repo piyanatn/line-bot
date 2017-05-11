@@ -17,7 +17,7 @@ $allerty_text = 'คำเตือน '.$obj['opd_allergy'][0]['agent'];
 //$obj['opd_allergy'][0]['symptom'];
 
 // Build message to reply back
-
+if (!is_null($obj['opd_allergy'][0]['agent']) {
 $access_token = 'tMQUkt2NlMGyROq8or9Yo//dLL20vznurHf/wundj5T+PeDLqoXRvZLY+5Drmoz0NXmRQy97b/xssaSunifqxDGQnu7faRK6rMDQEwEx0yiox8RJdzGJxcKblQA3Qb7DBq85P4m7pobxDTRbJ1WKIQdB04t89/1O/w1cDnyilFU=';
 
 
@@ -64,5 +64,6 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 	}
+}
 }
 echo "OK";
