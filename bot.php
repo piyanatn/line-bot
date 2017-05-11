@@ -34,10 +34,10 @@ if (!is_null($events['events'])) {
 			$obj = json_decode($json,true);
 
 
-			$allerty_text = 'คำเตือน '.$obj['opd_allergy'][0]['agent'];
+
 			//echo $allerty_text ."<br>";
 
-			$text = $allerty_text = 'คำเตือน '.$obj['opd_allergy'][0]['agent'];
+			$text = $allerty_text = 'คำเตือน : '.$obj['opd_allergy'][0]['agent'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
