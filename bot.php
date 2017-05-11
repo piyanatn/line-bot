@@ -35,8 +35,11 @@ if (!is_null($events['events'])) {
 			//$obj['opd_allergy'][0]['symptom'];
 
 			// Build message to reply back
-			$mymessage = 'แพ้ยา : '. $obj['opd_allergy'][0]['agent'].'  อาการ : '.$obj['opd_allergy'][0]['symptom'];
-
+			if (obj['opd_allergy'][0]['agent']=''){
+					$mymessage = 'ไม่พบข้อมูลการแพ้ยา หรือ หมายเลขบัตรประชาชนไม่ถูกต้อง';
+			}else{
+					$mymessage = 'แพ้ยา : '. $obj['opd_allergy'][0]['agent'].'  อาการ : '.$obj['opd_allergy'][0]['symptom'];
+			}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
