@@ -37,11 +37,16 @@ if (!is_null($events['events'])) {
 			//$obj['opd_allergy'][0]['symptom'];
 
 			// Build message to reply back
-			if (count($obj['opd_allergy'][0])>0){
-					$mymessage = 'แพ้ยา : '. $obj['opd_allergy'][0]['agent'].'  อาการ : '.$obj['opd_allergy'][0]['symptom'];
-				}else{
-							$mymessage = 'ไม่พบข้อมูลการแพ้ยา หรือ หมายเลขบัตรประชาชนไม่ถูกต้อง';
+
+
+			if (count($obj['opd_allergy'])>0){
+				for($i=0;$i<=count($obj['opd_allergy']-1;$i++)
+					{
+						$mymessage = 'แพ้ยา : '. $obj['opd_allergy'][i]['agent'].'  อาการ : '.$obj['opd_allergy'][i]['symptom'];
 					}
+			}else{
+							$mymessage = 'ไม่พบข้อมูลการแพ้ยา หรือ หมายเลขบัตรประชาชนไม่ถูกต้อง';
+			}
 		}else{
 					$mymessage = 'ไม่พบข้อมูลการแพ้ยา หรือ หมายเลขบัตรประชาชนไม่ถูกต้อง';
 			}
