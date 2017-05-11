@@ -18,15 +18,15 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			//READ DRUG ALLEGRY
-			$url = 'http://localhost:3000/api/drugallergy/3670500981816';
-			$ch = curl_init($url);
+			$line_url = 'http://localhost:3000/api/drugallergy/3670500981816';
+			$ch = curl_init($line_url);
 			curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			$data = curl_exec($ch);
 			curl_close($ch);
 			//echo $data;
-			$json = file_get_contents($url);
+			$json = file_get_contents($line_url);
 			$obj = json_decode($json,true);
 
 			$text = 'คำเตือน '.$obj['opd_allergy'][0]['agent'];
