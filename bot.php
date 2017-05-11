@@ -4,7 +4,7 @@
 
 $access_token = 'tMQUkt2NlMGyROq8or9Yo//dLL20vznurHf/wundj5T+PeDLqoXRvZLY+5Drmoz0NXmRQy97b/xssaSunifqxDGQnu7faRK6rMDQEwEx0yiox8RJdzGJxcKblQA3Qb7DBq85P4m7pobxDTRbJ1WKIQdB04t89/1O/w1cDnyilFU=';
 
-
+$mymessage = '';
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -42,7 +42,7 @@ if (!is_null($events['events'])) {
 			if (count($obj['opd_allergy'])>0){
 				for($i=0;$i<=count($obj['opd_allergy']-1;$i++)
 					{
-						$mymessage = 'แพ้ยา : '. $obj['opd_allergy'][i]['agent'].'  อาการ : '.$obj['opd_allergy'][i]['symptom'];
+						 $mymessage = $mymessage . 'แพ้ยา : '. $obj['opd_allergy'][i]['agent'].'  อาการ : '.$obj['opd_allergy'][i]['symptom']. '      ';
 					}
 			}else{
 							$mymessage = 'ไม่พบข้อมูลการแพ้ยา หรือ หมายเลขบัตรประชาชนไม่ถูกต้อง';
