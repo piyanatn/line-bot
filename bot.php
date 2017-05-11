@@ -28,10 +28,10 @@ if (!is_null($events['events'])) {
 			//echo $data;
 			$json = file_get_contents($url);
 			$obj = json_decode($json,true);
-
-			$text = $obj['opd_allergy'][0]['agent']
-			. "<br>" .
-			$obj['opd_allergy'][0]['symptom'];
+			$text = $url;
+//			$text = $obj['opd_allergy'][0]['agent'];
+			//. "<br>" .
+			//$obj['opd_allergy'][0]['symptom'];
 
 			// Build message to reply back
 			$messages = [
