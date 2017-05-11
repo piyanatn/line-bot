@@ -28,8 +28,8 @@ if (!is_null($events['events'])) {
 			//echo $data;
 			$json = file_get_contents($url);
 			$obj = json_decode($json,true);
-			$text = $data;
-			//$text = $obj['opd_allergy'][0]['agent'];
+
+			$text = 'คำเตือน '.$obj['opd_allergy'][0]['agent'];
 			//. "<br>" .
 			//$obj['opd_allergy'][0]['symptom'];
 
