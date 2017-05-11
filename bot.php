@@ -17,6 +17,22 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
+			//READ DRUG ALLEGRY
+			$url = 'http://localhost:3000/api/drugallergy/'.$text;
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$data = curl_exec($ch);
+			curl_close($ch);
+			//echo $data;
+			$json = file_get_contents($url);
+			$obj = json_decode($json,true);
+
+			$text = $obj['opd_allergy'][0]['agent']
+			. "<br>" .
+			$obj['opd_allergy'][0]['symptom'];
+
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
