@@ -40,10 +40,10 @@ if (!is_null($events['events'])) {
 
 
 			if (count($obj['opd_allergy'])>0){
-				for($i=0;$i<=count($obj['opd_allergy']-1;$i++)
-					{
-						 $mymessage = $mymessage . strval(count($obj['opd_allergy'])). ' แพ้ยา : '. $obj['opd_allergy'][i]['agent'].'  อาการ : '.$obj['opd_allergy'][i]['symptom']. '      ';
-					}
+				//for($i=0;$i<=count($obj['opd_allergy']-1;$i++)
+					//{
+						 $mymessage = $mymessage . strval(count($obj['opd_allergy'])). ' แพ้ยา : '. $obj['opd_allergy'][0]['agent'].'  อาการ : '.$obj['opd_allergy'][0]['symptom']. '      ';
+					//}
 			}else{
 							$mymessage = 'ไม่พบข้อมูลการแพ้ยา หรือ หมายเลขบัตรประชาชนไม่ถูกต้อง';
 			}
