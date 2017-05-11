@@ -14,6 +14,7 @@ $obj = json_decode($json,true);
 
 
 $allerty_text = 'คำเตือน '.$obj['opd_allergy'][0]['agent'];
+echo $allerty_text ."<br>";
 //. "<br>" .
 //$obj['opd_allergy'][0]['symptom'];
 
@@ -34,12 +35,13 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
+			$text = $allerty_text = 'คำเตือน '.$obj['opd_allergy'][0]['agent'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
 			$messages = [
 				'type' => 'text',
-				'text' => $allerty_text
+				'text' => $text
 			];
 
 
