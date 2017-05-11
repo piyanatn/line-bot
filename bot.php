@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			//READ DRUG ALLEGRY
-			$url = 'http://localhost:3000/api/drugallergy/'.$text;
+			$url = 'http://localhost:3000/api/drugallergy/3670500981816';
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
