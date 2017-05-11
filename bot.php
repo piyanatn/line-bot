@@ -19,6 +19,8 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			//$text = 'คำเตือน : '.$obj['opd_allergy'][0]['agent'];
 
+
+			if (strlen($text)=13){
 			//READ DRUG ALLEGRY
 			$line_url = 'http://110.77.146.4:3000/api/drugallergy/'.$text;
 			$chl = curl_init($line_url);
@@ -35,9 +37,8 @@ if (!is_null($events['events'])) {
 			//$obj['opd_allergy'][0]['symptom'];
 
 			// Build message to reply back
-			if (strlen(obj['opd_allergy'][0]['agent'])>0){
-					$mymessage = 'แพ้ยา : '. $obj['opd_allergy'][0]['agent'].'  อาการ : '.$obj['opd_allergy'][0]['symptom'];
 
+					$mymessage = 'แพ้ยา : '. $obj['opd_allergy'][0]['agent'].'  อาการ : '.$obj['opd_allergy'][0]['symptom'];
 			}else{
 					$mymessage = 'ไม่พบข้อมูลการแพ้ยา หรือ หมายเลขบัตรประชาชนไม่ถูกต้อง';
 			}
