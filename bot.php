@@ -37,7 +37,7 @@ if (!is_null($events['events'])) {
 			//$obj['opd_allergy'][0]['symptom'];
 
 			// Build message to reply back
-			if (strlen(obj['opd_allergy'][0]['agent'])>0){
+			if (count($obj['opd_allergy'])>0){
 					$mymessage = 'แพ้ยา : '. $obj['opd_allergy'][0]['agent'].'  อาการ : '.$obj['opd_allergy'][0]['symptom'];
 			}
 		}else{
