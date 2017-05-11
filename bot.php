@@ -1,20 +1,5 @@
 <?php
 
-//READ DRUG ALLEGRY
-$line_url = 'http://localhost:3000/api/drugallergy/3670500981816';
-$chl = curl_init($line_url);
-curl_setopt($chl, CURLOPT_TIMEOUT, 5);
-curl_setopt($chl, CURLOPT_CONNECTTIMEOUT, 5);
-curl_setopt($chl, CURLOPT_RETURNTRANSFER, true);
-$data1 = curl_exec($chl);
-curl_close($chl);
-//echo $data;
-$json = file_get_contents($line_url);
-$obj = json_decode($json,true);
-
-
-$allerty_text = 'คำเตือน '.$obj['opd_allergy'][0]['agent'];
-echo $allerty_text ."<br>";
 //. "<br>" .
 //$obj['opd_allergy'][0]['symptom'];
 
@@ -35,6 +20,23 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
+
+			//READ DRUG ALLEGRY
+			$line_url = 'http://localhost:3000/api/drugallergy/3670500981816';
+			$chl = curl_init($line_url);
+			curl_setopt($chl, CURLOPT_TIMEOUT, 5);
+			curl_setopt($chl, CURLOPT_CONNECTTIMEOUT, 5);
+			curl_setopt($chl, CURLOPT_RETURNTRANSFER, true);
+			$data1 = curl_exec($chl);
+			curl_close($chl);
+			//echo $data;
+			$json = file_get_contents($line_url);
+			$obj = json_decode($json,true);
+
+
+			$allerty_text = 'คำเตือน '.$obj['opd_allergy'][0]['agent'];
+			//echo $allerty_text ."<br>";
+
 			$text = $allerty_text = 'คำเตือน '.$obj['opd_allergy'][0]['agent'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
