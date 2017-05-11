@@ -39,7 +39,9 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			if (count($obj['opd_allergy'][0])>0){
 					$mymessage = 'แพ้ยา : '. $obj['opd_allergy'][0]['agent'].'  อาการ : '.$obj['opd_allergy'][0]['symptom'];
-			}
+				}else{
+							$mymessage = 'ไม่พบข้อมูลการแพ้ยา หรือ หมายเลขบัตรประชาชนไม่ถูกต้อง';
+					}
 		}else{
 					$mymessage = 'ไม่พบข้อมูลการแพ้ยา หรือ หมายเลขบัตรประชาชนไม่ถูกต้อง';
 			}
